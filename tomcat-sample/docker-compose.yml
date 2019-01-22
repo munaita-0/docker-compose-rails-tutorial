@@ -1,0 +1,16 @@
+version: '3'
+services:
+
+  tomcat:
+    build: ./tomcat
+    image: tomcat-image
+    container_name: tomcat-1
+    volumes:
+      - ./tomcat/share/logs:/share/logs
+
+  nginx:
+    build: ./nginx
+    image: nginx-image
+    container_name: nginx
+    ports:
+      - 10080:80
